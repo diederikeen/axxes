@@ -8,13 +8,13 @@ function wrapper(items: Item[]) {
 }
 
 describe('GildedTrosTest Normal Items', () => {
-  it('should decrease the quality of an item by 1', () => {
+  it('should decrease the quality of an item by 1 if item is not expired', () => {
     const items: Item[] = [new Item('Something', 10, 4)];
     const app = wrapper(items);
     expect(app.items[0].quality).toEqual(3);
   });
 
-  it('should decrease the quality of an item by 2', () => {
+  it('should decrease the quality of an item by 2 when item is expired', () => {
     const items: Item[] = [new Item('Something', -1, 4)];
     const app = wrapper(items);
     expect(app.items[0].quality).toEqual(2);
