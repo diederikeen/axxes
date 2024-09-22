@@ -88,6 +88,7 @@ describe('GildedTrosTest Legendary items', () => {
     const items: Item[] = [new Item('B-DAWG Keychain', 10, 80)];
     const app = wrapper(items);
     expect(app.items[0].quality).toEqual(80);
+    expect(app.items[0].sellIn).toEqual(10);
   });
 });
 
